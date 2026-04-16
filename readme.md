@@ -129,7 +129,7 @@ export class ProductService {
 }
 ```
 
-## Le recours aux `Observable` (issus de la bibliothèque RxJS) plutôt qu'aux `Promise` classiques offre une gestion plus fine des flux de données asynchrones, notamment en permettant l'annulation de requêtes, la combinaison de flux et l'application d'opérateurs de transformation.
+#### Le recours aux `Observable` (issus de la bibliothèque RxJS) plutôt qu'aux `Promise` classiques offre une gestion plus fine des flux de données asynchrones, notamment en permettant l'annulation de requêtes, la combinaison de flux et l'application d'opérateurs de transformation.
 
 ## 5. Le Routage — `app.routes.ts`
 
