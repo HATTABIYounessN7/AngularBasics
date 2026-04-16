@@ -1,1 +1,31 @@
-<p>product-list works!</p>
+<input
+  type="text"
+  class="form-control mb-3"
+  placeholder="search..."
+  [(ngModel)]="searchTerm"
+  (ngModelChange)="searchProducts()"
+/>
+
+<p *ngIf="loading()">Loading.....</p>
+
+<div *ngIf="!loading()">
+  <div *ngFor="let product of products(); trackBy: trackById">
+    <app-product-item
+      [product]="product"
+      (delete)="deleteProduct($event)"
+      (details)="getProduct($event)"
+    ></app-product-item>
+  </div>
+</div>
+
+<div class="modal fade show d-block" *ngIf="selectedProduct">
+  <div class="modal-dialog">
+    <div class="modal-content p-3">
+      <h4>{{ selectedProduct.name }}</h4>
+      <p>Price: {{ selectedProduct.price }}</p>
+      <p>Quantity: {{ selectedProduct.quantity }}</p>
+
+      <button class="btn btn-secondary" (click)="selectedProduct = undefined">Close</button>
+    </div>
+  </div>
+</div>
